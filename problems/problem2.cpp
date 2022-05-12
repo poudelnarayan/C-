@@ -11,13 +11,13 @@ class Time
     int hr{0}, min{0}, sec{0}, temp{0};
 
 public:
-    void setTime();
+    bool setTime();
     void getTime();
     void convertTo12HourSystem();
     void convertTo24HourSystem();
 };
 
-void Time::setTime()
+bool Time::setTime()
 {
     string msg;
     cout << "Enter hour minute and second" << endl;
@@ -26,16 +26,17 @@ void Time::setTime()
     cin >> temp;
     if (temp == 0 || temp == 1)
     {
+        return true;
     }
     else
     {
         cout << "Invalid input" << endl;
-        return;
+        return false;
     }
     if (hr > 12 && temp == 0)
     {
         cout << "Not a valid input" << endl;
-        return;
+        return false;
     }
 }
 void Time::convertTo12HourSystem()
@@ -60,8 +61,14 @@ void Time::getTime()
 
 int main()
 {
+    bool isOkay;
     Time t1;
-    t1.setTime();
+    isOkay = t1.setTime();
+    if (!isOkay)
+    {
+        cout << "Something error happens";
+        return 0;
+    }
     t1.convertTo24HourSystem();
     t1.getTime();
 

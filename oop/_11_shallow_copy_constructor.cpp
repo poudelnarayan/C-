@@ -25,7 +25,7 @@ public:
     int getDataValue() { return *data; }
     // Constructor
     Shallow(int d);
-    // Copy COnstructor
+    // Copy Constructor
     Shallow(const Shallow &source);
     // Destructor
     ~Shallow();
