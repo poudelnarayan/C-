@@ -76,3 +76,9 @@ int main()
 
     return 0;
 }
+
+/*
+If i comment line 66 (overloaded constructor of derived class) and add "using Base:Base " above the member declaration
+then the base's overloaded constructor will be called. And it will put the value of "value" to 1000 but doubled value will left unintialized.
+
+*/
