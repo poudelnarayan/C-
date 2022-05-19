@@ -9,6 +9,7 @@
 */
 
 #include <iostream>
+#include <memory>
 
 using namespace std;
 
@@ -39,12 +40,21 @@ void greeting(const Base &obj)
 int main()
 {
     Base b1;
-    b1.sayHello(); // Okay. calss base class
+    b1.sayHello(); // Okay. base class
     greeting(b1);  // calls base class (static binding)
 
     Derived d1;
-    d1.sayHello(); // Okay. class derived class
+    d1.sayHello(); // Okay. derived class
     greeting(d1);  // calls base class  (static binding)
+
+    Base *ptr = new Derived(); // regular pointers
+    ptr->sayHello();           // static  binding
+
+    unique_ptr<Base> ptr1 = make_unique<Derived>(); // smart pointer
+    ptr1->sayHello();
+
+    delete ptr;
+    // Smart pointers are so smart that they a can handle their state themselves. i.e no need to delete manually
 
     return 0;
 }
