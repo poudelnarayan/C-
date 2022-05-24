@@ -13,7 +13,7 @@ int main()
 
 void print_array(const int numbers[], size_t size)
 {
-    // Does;nt know how many elements are in the arra
+    // Does'nt know how many elements are in the array
     // wee need to pass in the size!!!
 
     for (size_t i{0}; i < size; i++)

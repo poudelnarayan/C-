@@ -9,7 +9,6 @@ int *create_array(size_t size, int init_value = 0)
     {
         *(new_storage + i) = init_value;
     }
-
     return new_storage;
 }
 

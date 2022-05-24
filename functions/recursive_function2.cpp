@@ -23,6 +23,11 @@ unsigned long long fibonacci(unsigned long long number)
 
 int main()
 {
-    cout << fibonacci(100) << endl;
+    int i = 0;
+    while (i < 5)
+    {
+        cout << fibonacci(i) << " ";
+        i++;
+    }
     return 0;
 }

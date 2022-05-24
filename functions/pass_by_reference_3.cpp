@@ -4,7 +4,7 @@
 #include <vector>
 using namespace std;
 // Pass by reference has a flaw. that is the local variable scoped to
-// main function can also be changed by outer function. so we add cons in front of variable to restrict it from changing
+// main function can also be changed by outer function. so we add const in front of variable to restrict it from changing
 void print(const vector<int> &v);
 
 static int value{10};

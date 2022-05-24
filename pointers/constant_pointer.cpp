@@ -17,7 +17,7 @@ int main()
     // The data pointed to by the pointer is constant and cannot be changed.
     // The pointer itself can change and point somewhere else
 
-    // *score_ptr = 500;  Throws an error .Thw constant pointer pointing to any address cannot be changed.
+    // *score_ptr = 500;  Throws an error .The constant pointer pointing to any address cannot be changed.
     score_ptr = &low_score; // can be done in constant pointer .  Its address can be changed
     cout << score_ptr << endl;
     cout << *score_ptr << endl;
