@@ -4,6 +4,7 @@
 #include <vector>
 #include <algorithm>
 
+
 // template function to display any deque
 template <typename T>
 void display(const std::deque<T> &d)
