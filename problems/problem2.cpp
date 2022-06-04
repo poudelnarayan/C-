@@ -1,76 +1,88 @@
-/*
-Write a program that will represent time measurement in 12 hour system with object oriented approach.
-The program should have conversion function to convert to 12 hour and 24 hour systems.
-*/
-
+// Program to transpose a 3x3 square matrix
 #include <iostream>
+
 using namespace std;
 
-class Time
+class Matrix
 {
-    int hr{0}, min{0}, sec{0}, temp{0};
+    int mat[3][3];
+    int tMat[3][3];
 
 public:
-    bool setTime();
-    void getTime();
-    void convertTo12HourSystem();
-    void convertTo24HourSystem();
+    Matrix(){};
+    void setMatrix();
+    void displayMatrix();
+    void transpose();
+    void displayTranspose();
 };
 
-bool Time::setTime()
+void Matrix::setMatrix()
 {
-    string msg;
-    cout << "Enter hour minute and second" << endl;
-    cin >> hr >> min >> sec;
-    cout << "Enter 0 for am and 1 for pm" << endl;
-    cin >> temp;
-    if (temp == 0 || temp == 1)
+    for (int i = 0; i < 3; i++)
     {
-        return true;
-    }
-    else
-    {
-        cout << "Invalid input" << endl;
-        return false;
-    }
-    if (hr > 12 && temp == 0)
-    {
-        cout << "Not a valid input" << endl;
-        return false;
-    }
-}
-void Time::convertTo12HourSystem()
-{
-    if (hr > 12)
-    {
-        hr = hr - 12;
+        for (int j = 0; j < 3; j++)
+        {
+            cin >> mat[i][j];
+        }
     }
 }
 
-void Time::convertTo24HourSystem()
+void Matrix::transpose()
 {
-    if (hr < 12 && temp == 1)
+    for (int i = 0; i < 3; i++)
     {
-        hr = hr + 12;
-    };
+        for (int j = 0; j < 3; j++)
+        {
+            tMat[i][j] = mat[j][i];
+        }
+    }
 }
-void Time::getTime()
+
+void Matrix::displayTranspose()
 {
-    cout << "Converted time is: " << hr << " : " << min << " : " << sec << endl;
-};
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            cout << tMat[i][j];
+            cout << "\t";
+        }
+        cout << "\n";
+    }
+}
+
+void Matrix::displayMatrix()
+{
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            cout << mat[i][j];
+            cout << "\t";
+        }
+        cout << "\n";
+    }
+}
 
 int main()
 {
-    bool isOkay;
-    Time t1;
-    isOkay = t1.setTime();
-    if (!isOkay)
-    {
-        cout << "Something error happens";
-        return 0;
-    }
-    t1.convertTo24HourSystem();
-    t1.getTime();
+    Matrix a;
+
+    cout << "Enter the element of (3x3) matrix : " << endl;
+    a.setMatrix();
+    cout << "your matrix is" << endl
+         << endl;
+
+    a.displayMatrix();
+    cout << endl
+         << "transposing your matrix..." << endl
+         << endl;
+
+    a.transpose();
+    cout << "Transpose of a matrix" << endl
+         << endl;
+
+    a.displayTranspose();
 
     return 0;
 }
