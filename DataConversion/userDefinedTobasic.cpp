@@ -12,10 +12,10 @@ public:
     operator float()
     {
         float l;
-        int s;
         l = length * 100.0;
         return l;
     }
+    
 
     void getLength()
     {
