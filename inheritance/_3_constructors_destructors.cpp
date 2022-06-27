@@ -53,7 +53,7 @@ private:
 public:
     Base() : value{0} { cout << "Base no-args constructors " << endl; }
     Base(int x) : value{x} { cout << "Base (int) overloaded constructor " << endl; }
-    ~Base() { cout << "bBase destructor" << endl; }
+    ~Base() { cout << "Base destructor" << endl; }
 };
 
 class Derived : public Base

@@ -52,7 +52,7 @@ int main()
     cout << "=== Base member access from base objects ===== " << endl;
     Base base;
     base.a = 100;
-    // base.b = 200;  //Compiler since protected
+    // base.b = 200;  //Compiler error since protected
     // base.c = 300;  // Compiler error since private
 
     cout << "=== Base member access from derived objects =======" << endl;

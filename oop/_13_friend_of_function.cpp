@@ -17,7 +17,7 @@ class Distance
 {
     int meter;
     friend int addFive(Distance); // friend function
-    // addFive is a friend function that can access both provate and public data members.
+    // addFive is a friend function that can access both private and public data members.
 public:
     Distance() : meter(0) {}
 };

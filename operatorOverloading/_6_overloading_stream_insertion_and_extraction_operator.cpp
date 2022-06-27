@@ -124,7 +124,7 @@ int main()
 
     cout << "Enter the third stooge's first name: ";
     cin >> curly;
-    cout << "The three stooges are" << narayan << ", " << poudel << ",  and" << curly << endl;
+    cout << "The three stooges are " << narayan << ", " << poudel << ",  and " << curly << endl;
 
     cout << "\n Enter the three stooges names seperated by a space: ";
     cin >> narayan >> poudel >> curly;
